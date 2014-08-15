@@ -1,0 +1,22 @@
+{
+  "name": "Zillow Compare",
+  "version": "0.0.0",
+  "description": "Compare Zillow listings",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.2.0",
+    "angular": "1.2.22",
+    "jquery": "2.1.1",
+    "angular-route": "~1.2.x"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components/",
+    "test",
+    "tests"
+  ]
+}
