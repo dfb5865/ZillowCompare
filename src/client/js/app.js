@@ -5,11 +5,11 @@ ZillowCompareApp.config( function($locationProvider, $routeProvider) {
     $routeProvider.
       when('/', {
         templateUrl: '/partials/search.html',
-		controller: 'SearchCtrl'
+        controller: 'SearchCtrl'
       }).
-      when('/homes/:address', {
-        templateUrl: '/partials/homelist.html',
-        controller: 'ResultsCtrl'
+      when('/comparehomes/:leftAddress/:rightAddress', {
+        templateUrl: '/partials/homecompare.html',
+        controller: 'CompareCtrl'
       }).
       otherwise({
         redirectTo: '/'
