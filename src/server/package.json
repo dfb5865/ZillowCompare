@@ -1,0 +1,11 @@
+{
+  "name": "Zillow-Compare-Server",
+  "description": "REST API to fetch Zillow data and match properties",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+	"request": "2.40.0",
+	"jquery": "latest"
+  }
+}

@@ -1,16 +1,17 @@
 var ZillowCompareApp = angular.module('ZillowCompareApp', ['ngRoute', 'ZillowCompareControllers' ]);
 
-ZillowCompareApp.config(['$routeProvider',
-  function($routeProvider) {
+ZillowCompareApp.config( function($locationProvider, $routeProvider) {
+	$locationProvider.html5Mode(true);
     $routeProvider.
       when('/', {
-        templateUrl: 'partials/search.html'
+        templateUrl: '/partials/search.html',
+		controller: 'SearchCtrl'
       }).
-      when('/homes', {
-        templateUrl: 'partials/homelist.html',
-        controller: 'HomeSearchCtrl'
+      when('/homes/:address', {
+        templateUrl: '/partials/homelist.html',
+        controller: 'ResultsCtrl'
       }).
       otherwise({
         redirectTo: '/'
       });
-  }]);
+  });
