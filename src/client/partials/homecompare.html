@@ -1,10 +1,113 @@
+
 <div class="container">
   <div class="row">
+  
     <div class="col-md-6">
-      {{leftHome}}
+      <h2>{{leftHome.address.street}} {{leftHome.address.city}} {{leftHome.address.state}} {{leftHome.address.zip}}</h2>
+
+      <img class="center-block" ng-src="{{leftHome.images[0]}}">
+      <br />
+      <ul class="list-group">
+        <li ng-class="{'list-group-item list-group-item-success': leftHome.sqft * 1 > rightHome.sqft * 1, 'list-group-item list-group-item-danger': leftHome.sqft * 1 < rightHome.sqft * 1, 'list-group-item list-group-item-info': leftHome.sqft * 1 == rightHome.sqft * 1}">
+                      <span class="pull-right">{{leftHome.sqft}}</span>
+                      Square Feet:
+        </li>
+        <li ng-class="{'list-group-item list-group-item-success': leftHome.bedrooms * 1 > rightHome.bedrooms * 1, 'list-group-item list-group-item-danger': leftHome.bedrooms * 1 < rightHome.bedrooms * 1, 'list-group-item list-group-item-info': leftHome.bedrooms * 1 == rightHome.bedrooms * 1 }">
+                      <span class="pull-right">{{leftHome.bedrooms}}</span>
+                      Bedrooms:
+        </li>
+        <li ng-class="{'list-group-item list-group-item-success': leftHome.bathrooms * 1 > rightHome.bathrooms * 1, 'list-group-item list-group-item-danger': leftHome.bathrooms * 1 < rightHome.bathrooms * 1, 'list-group-item list-group-item-info': leftHome.bathrooms * 1 == rightHome.bathrooms * 1}">
+                      <span class="pull-right">{{leftHome.bathrooms}}</span>
+                      Bathrooms:
+        </li>
+        <li class="list-group-item"><span class="pull-right">{{leftHome.year}}</span>Year Built:</li>
+      </ul>      
     </div>
+    
     <div class="col-md-6">
-      {{rightHome}}
+      <h2>{{rightHome.address.street}} {{rightHome.address.city}} {{rightHome.address.state}} {{rightHome.address.zip}}</h2>
+      
+      <img class="center-block" ng-src="{{rightHome.images[0]}}">
+      <br />
+      <ul class="list-group">
+        <li ng-class="{'list-group-item list-group-item-success': leftHome.sqft * 1 < rightHome.sqft * 1, 'list-group-item list-group-item-danger': leftHome.sqft * 1 > rightHome.sqft * 1, 'list-group-item list-group-item-info': leftHome.sqft * 1 == rightHome.sqft * 1}">
+                      <span class="pull-right">{{rightHome.sqft}}</span>
+                      Square Feet:
+        </li>
+        <li ng-class="{'list-group-item list-group-item-success': leftHome.bedrooms * 1 < rightHome.bedrooms * 1, 'list-group-item list-group-item-danger': leftHome.bedrooms * 1 > rightHome.bedrooms * 1, 'list-group-item list-group-item-info': leftHome.bedrooms * 1 == rightHome.bedrooms * 1 }">
+                      <span class="pull-right">{{rightHome.bedrooms}}</span>
+                      Bedrooms:
+        </li>
+        <li ng-class="{'list-group-item list-group-item-success': leftHome.bathrooms * 1 < rightHome.bathrooms * 1, 'list-group-item list-group-item-danger': leftHome.bathrooms * 1 > rightHome.bathrooms * 1, 'list-group-item list-group-item-info': leftHome.bathrooms * 1 == rightHome.bathrooms * 1}">
+                      <span class="pull-right">{{rightHome.bathrooms}}</span>
+                      Bathrooms:
+        </li>
+        <li class="list-group-item"><span class="pull-right">{{rightHome.year}}</span>Year Built:</li>
+      </ul>      
     </div>
+    
   </div>
+  
+  <br />
+  <br />
+  
+  <div class="row">
+      
+      <div class="panel panel-default col-md-6">
+        <div class="panel-heading"><strong>Left Home</strong></div>
+          <div class="panel-body">
+            <div class="col-md-6 nopadding">
+              <div id="leftStreetDiv">					
+                <input id="leftStreet" type="text" class="form-control input-lg" value="{{leftHome.address.street}}" />
+              </div>
+            </div>
+            
+            <div class="col-md-4 nopadding">
+              <div id="leftCityDiv">	
+                <input id="leftCity" type="text" class="form-control input-lg" value='{{leftHome.address.city}}'/>
+              </div>
+            </div>
+            
+            <div class="col-md-2 nopadding">
+              <div id="leftStateDiv">	
+                <input id="leftState" type="text" class="form-control input-lg" value='{{leftHome.address.state}}'/>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="panel panel-default col-md-6">
+          <div class="panel-heading"><strong>Right Home</strong></div>
+            <div class="panel-body">
+              <div class="col-md-6 nopadding">
+                <div id="rightStreetDiv">					
+                  <input id="rightStreet" type="text" class="form-control input-lg" value='{{rightHome.address.street}}'/>
+                </div>
+              </div>
+              
+              <div class="col-md-4 nopadding">
+                <div id="rightCityDiv">	
+                  <input id="rightCity" type="text" class="form-control input-lg" value='{{rightHome.address.city}}'/>
+                </div>
+              </div>
+              
+              <div class="col-md-2 nopadding">
+                <div id="rightStateDiv">	
+                  <input id="rightState" type="text" class="form-control input-lg" value='{{rightHome.address.state}}'/>
+                </div>
+              </div>
+        
+            </div>
+          </div>
+      </div>
+      
+      <br />
+      
+      <div class="row">
+        <div class="center-block">
+          <button id="searchButton" class="btn btn-primary btn-lg center-block" ng-submit="getSearchResults()">Compare!</button>
+        </div>
+      </div>
+  
+
 </div>
