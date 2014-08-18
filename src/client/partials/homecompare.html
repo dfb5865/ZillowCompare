@@ -1,48 +1,105 @@
-
-<div class="container">
+<!-- <script src="js/carouselScript.js"></script> -->
+<div id="mainContainer" class="container">
   <div class="row">
   
     <div class="col-md-6">
-      <h2>{{leftHome.address.street}} {{leftHome.address.city}} {{leftHome.address.state}} {{leftHome.address.zip}}</h2>
+      <h2 class="text-center">{{leftHome.address.street}}, {{leftHome.address.city}} {{leftHome.address.state}}</h2>
+      
+      <div id="leftCarousel" class="carousel slide center-block">
+      
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img class="fill" ng-src="{{leftHome.images[0]}}" alt="">
+          </div>
+          <div class="item" ng-repeat="image in leftHome.images" ng-if="!$first">
+            <img class="fill" ng-src="{{image}}" alt="">
+          </div>
+        </div>
 
-      <img class="center-block" ng-src="{{leftHome.images[0]}}">
+      <!-- Controls -->
+        <span class="left carousel-control" data-slide="prev">
+          <span class="icon-prev"></span>
+        </span>
+        <span class="right carousel-control" data-slide="next">
+          <span class="icon-next"></span>
+        </span>
+      </div>
+      
       <br />
       <ul class="list-group">
-        <li ng-class="{'list-group-item list-group-item-success': leftHome.sqft * 1 > rightHome.sqft * 1, 'list-group-item list-group-item-danger': leftHome.sqft * 1 < rightHome.sqft * 1, 'list-group-item list-group-item-info': leftHome.sqft * 1 == rightHome.sqft * 1}">
+        <li class="list-group-item" ng-class="{'list-group-item-success': leftHome.sqft * 1 > rightHome.sqft * 1, 'list-group-item-danger': leftHome.sqft * 1 < rightHome.sqft * 1, 'list-group-item-info': leftHome.sqft * 1 == rightHome.sqft * 1}">
                       <span class="pull-right">{{leftHome.sqft}}</span>
                       Square Feet:
         </li>
-        <li ng-class="{'list-group-item list-group-item-success': leftHome.bedrooms * 1 > rightHome.bedrooms * 1, 'list-group-item list-group-item-danger': leftHome.bedrooms * 1 < rightHome.bedrooms * 1, 'list-group-item list-group-item-info': leftHome.bedrooms * 1 == rightHome.bedrooms * 1 }">
+        <li class="list-group-item" ng-class="{'list-group-item-success': leftHome.bedrooms * 1 > rightHome.bedrooms * 1, 'list-group-item-danger': leftHome.bedrooms * 1 < rightHome.bedrooms * 1, 'list-group-item-info': leftHome.bedrooms * 1 == rightHome.bedrooms * 1 }">
                       <span class="pull-right">{{leftHome.bedrooms}}</span>
                       Bedrooms:
         </li>
-        <li ng-class="{'list-group-item list-group-item-success': leftHome.bathrooms * 1 > rightHome.bathrooms * 1, 'list-group-item list-group-item-danger': leftHome.bathrooms * 1 < rightHome.bathrooms * 1, 'list-group-item list-group-item-info': leftHome.bathrooms * 1 == rightHome.bathrooms * 1}">
+        <li class="list-group-item" ng-class="{'list-group-item-success': leftHome.bathrooms * 1 > rightHome.bathrooms * 1, 'list-group-item-danger': leftHome.bathrooms * 1 < rightHome.bathrooms * 1, 'list-group-item-info': leftHome.bathrooms * 1 == rightHome.bathrooms * 1}">
                       <span class="pull-right">{{leftHome.bathrooms}}</span>
                       Bathrooms:
         </li>
         <li class="list-group-item"><span class="pull-right">{{leftHome.year}}</span>Year Built:</li>
+        <li class="list-group-item" ng-class="{'list-group-item-success': leftHome.lastSoldPrice * 1 < rightHome.lastSoldPrice * 1, 'list-group-item-danger': leftHome.lastSoldPrice * 1 > rightHome.lastSoldPrice * 1, 'list-group-item-info': leftHome.lastSoldPrice * 1 == rightHome.lastSoldPrice * 1}">
+                      <span class="pull-right">{{leftHome.lastSoldPrice}}</span>
+                      Last Sold Price:
+        </li>
+        <li class="list-group-item"><span class="pull-right">{{leftHome.lastSoldDate}}</span>Last Sold Date:</li>
+        <li class="list-group-item" ng-class="{'list-group-item-success': leftHome.price * 1 < rightHome.price * 1, 'list-group-item-danger': leftHome.price * 1 > rightHome.price * 1, 'list-group-item-info': leftHome.price * 1 == rightHome.price * 1}">
+                      <span class="pull-right">{{leftHome.price}}</span>
+                      Current Price:
+        </li>
       </ul>      
     </div>
     
     <div class="col-md-6">
-      <h2>{{rightHome.address.street}} {{rightHome.address.city}} {{rightHome.address.state}} {{rightHome.address.zip}}</h2>
+      <h2 class="text-center">{{rightHome.address.street}}, {{rightHome.address.city}} {{rightHome.address.state}}</h2>
       
-      <img class="center-block" ng-src="{{rightHome.images[0]}}">
+      <div id="leftCarousel" class="carousel slide center-block">
+      
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img class="fill" ng-src="{{rightHome.images[0]}}" alt="">
+          </div>
+          <div class="item" ng-repeat="image in rightHome.images" ng-if="!$first">
+            <img class="fill" ng-src="{{image}}" alt="">
+          </div>
+        </div>
+
+      <!-- Controls -->
+        <span class="left carousel-control" data-slide="prev">
+          <span class="icon-prev"></span>
+        </span>
+        <span class="right carousel-control" data-slide="next">
+          <span class="icon-next"></span>
+        </span>
+      </div>
       <br />
       <ul class="list-group">
-        <li ng-class="{'list-group-item list-group-item-success': leftHome.sqft * 1 < rightHome.sqft * 1, 'list-group-item list-group-item-danger': leftHome.sqft * 1 > rightHome.sqft * 1, 'list-group-item list-group-item-info': leftHome.sqft * 1 == rightHome.sqft * 1}">
+        <li class="list-group-item" ng-class="{'list-group-item list-group-item-success': leftHome.sqft * 1 < rightHome.sqft * 1, 'list-group-item list-group-item-danger': leftHome.sqft * 1 > rightHome.sqft * 1, 'list-group-item list-group-item-info': leftHome.sqft * 1 == rightHome.sqft * 1}">
                       <span class="pull-right">{{rightHome.sqft}}</span>
                       Square Feet:
         </li>
-        <li ng-class="{'list-group-item list-group-item-success': leftHome.bedrooms * 1 < rightHome.bedrooms * 1, 'list-group-item list-group-item-danger': leftHome.bedrooms * 1 > rightHome.bedrooms * 1, 'list-group-item list-group-item-info': leftHome.bedrooms * 1 == rightHome.bedrooms * 1 }">
+        <li class="list-group-item" ng-class="{'list-group-item list-group-item-success': leftHome.bedrooms * 1 < rightHome.bedrooms * 1, 'list-group-item list-group-item-danger': leftHome.bedrooms * 1 > rightHome.bedrooms * 1, 'list-group-item list-group-item-info': leftHome.bedrooms * 1 == rightHome.bedrooms * 1 }">
                       <span class="pull-right">{{rightHome.bedrooms}}</span>
                       Bedrooms:
         </li>
-        <li ng-class="{'list-group-item list-group-item-success': leftHome.bathrooms * 1 < rightHome.bathrooms * 1, 'list-group-item list-group-item-danger': leftHome.bathrooms * 1 > rightHome.bathrooms * 1, 'list-group-item list-group-item-info': leftHome.bathrooms * 1 == rightHome.bathrooms * 1}">
+        <li class="list-group-item" ng-class="{'list-group-item list-group-item-success': leftHome.bathrooms * 1 < rightHome.bathrooms * 1, 'list-group-item list-group-item-danger': leftHome.bathrooms * 1 > rightHome.bathrooms * 1, 'list-group-item list-group-item-info': leftHome.bathrooms * 1 == rightHome.bathrooms * 1}">
                       <span class="pull-right">{{rightHome.bathrooms}}</span>
                       Bathrooms:
         </li>
         <li class="list-group-item"><span class="pull-right">{{rightHome.year}}</span>Year Built:</li>
+        <li class="list-group-item" ng-class="{'list-group-item-success': leftHome.lastSoldPrice * 1 > rightHome.lastSoldPrice * 1, 'list-group-item-danger': leftHome.lastSoldPrice * 1 < rightHome.lastSoldPrice * 1, 'list-group-item-info': leftHome.lastSoldPrice * 1 == rightHome.lastSoldPrice * 1}">
+                      <span class="pull-right">{{rightHome.lastSoldPrice}}</span>
+                      Last Sold Price:
+        </li>
+        <li class="list-group-item"><span class="pull-right">{{rightHome.lastSoldDate}}</span>Last Sold Date:</li>
+        <li class="list-group-item" ng-class="{'list-group-item-success': leftHome.price * 1 > rightHome.price * 1, 'list-group-item-danger': leftHome.price * 1 < rightHome.price * 1, 'list-group-item-info': leftHome.price * 1 == rightHome.price * 1}">
+                      <span class="pull-right">{{rightHome.price}}</span>
+                      Current Price:
+        </li>
       </ul>      
     </div>
     
