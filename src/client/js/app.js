@@ -10,6 +10,9 @@ ZillowCompareApp.config( function($routeProvider) {
         templateUrl: '/partials/homecompare.html',
         controller: 'CompareCtrl'
       }).
+      when('/about', {
+        templateUrl: '/partials/about.html'
+      }).
       otherwise({
         redirectTo: '/'
       });

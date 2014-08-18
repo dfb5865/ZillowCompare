@@ -1,68 +1,69 @@
 <script src="js/holder.js"></script>
 <div class="container">
 		<div class="jumbotron">
-			<h1>Compare Homes!</h1>
-			<p>Put in the address of two homes you are interested in and we will compare them for you.<br />
+			<h1 class="text-center">Compare Homes!</h1>
+			<p class="text-center">Put in the address of two homes you are interested in and we will compare them for you.<br />
 			Compare price, bedrooms, bathrooms, square feet... everything to help you make a better decision on your dream home.</p>
-			<p><a href="#" class="btn btn-info btn-lg" role="button">Learn more &raquo;</a></p>
-
-      <div class="row">
-      
-      <div class="panel panel-default col-md-6">
-        <div class="panel-heading"><strong>Left Home</strong></div>
-          <div class="panel-body">
+			<div class="text-center"><p><a href="#/about" class="btn btn-success btn-lg" role="button">Learn more &raquo;</a></p></div>
+      <br />
+      <form>
+        <div class="row">    
+        
+          <div class="col-md-6">
             <div class="col-md-6 nopadding">
-              <div id="leftStreetDiv">					
+              <div id="leftStreetDiv">	
+                <strong>Left Home</strong>
                 <input id="leftStreet" type="text" class="form-control input-lg" holder="4 Mystique"/>
               </div>
             </div>
-            
+    
             <div class="col-md-4 nopadding">
-              <div id="leftCityDiv">	
+              <div id="leftCityDiv">
+                <br />
                 <input id="leftCity" type="text" class="form-control input-lg" holder="Newport Coast"/>
               </div>
             </div>
-            
+    
             <div class="col-md-2 nopadding">
-              <div id="leftStateDiv">	
+              <div id="leftStateDiv">
+                <br />
                 <input id="leftState" type="text" class="form-control input-lg" holder="CA"/>
               </div>
             </div>
           </div>
-        </div>
-        
-        <div class="panel panel-default col-md-6">
-          <div class="panel-heading"><strong>Right Home</strong></div>
-            <div class="panel-body">
-              <div class="col-md-6 nopadding">
-                <div id="rightStreetDiv">					
-                  <input id="rightStreet" type="text" class="form-control input-lg" holder="1209 Ocean Ter"/>
-                </div>
+          
+          <div class="col-md-6">
+            
+            <div class="col-md-6 nopadding">
+              <div id="rightStreetDiv">
+                <strong>Right Home</strong>
+                <input id="rightStreet" type="text" class="form-control input-lg" holder="1209 Ocean Ter"/>
               </div>
-              
-              <div class="col-md-4 nopadding">
-                <div id="rightCityDiv">	
-                  <input id="rightCity" type="text" class="form-control input-lg" holder="Seaside Heights"/>
-                </div>
+            </div>
+            
+            <div class="col-md-4 nopadding">
+              <div id="rightCityDiv">
+                <br />
+                <input id="rightCity" type="text" class="form-control input-lg" holder="Seaside Heights"/>
               </div>
-              
-              <div class="col-md-2 nopadding">
-                <div id="rightStateDiv">	
-                  <input id="rightState" type="text" class="form-control input-lg" holder="NJ"/>
-                </div>
+            </div>
+            
+            <div class="col-md-2 nopadding">
+              <div id="rightStateDiv">
+                <br />
+                <input id="rightState" type="text" class="form-control input-lg" holder="NJ"/>
               </div>
-        
             </div>
           </div>
-      </div>
-      
-      <br />
-      
-      <div class="row">
-        <div class="center-block">
-            <button id="searchButton" class="btn btn-primary btn-lg center-block" type="submit" ng-click="getSearchResults()">Compare!</button>
         </div>
-      </div>
-      
+        
+        <br />
+        
+        <div class="row">
+          <div class="center-block">
+             <button id="searchButton" class="btn btn-primary btn-lg center-block" type="submit" ng-click="getSearchResults()">Compare!</button>
+          </div>
+        </div>
+      </form>
     </div>
 </div>
