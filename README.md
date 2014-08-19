@@ -14,12 +14,14 @@ This project is to demonstrate my skills as a full stack software developer.
 * AngularJS
 * Bootstrap
 * Bower
+* Rest
 
 #####Backend:
 * Amazon AWS
 * Apache
 * Node
 * Express
+* Rest
 
 ### TO-DO:
 * Add features that require a database (to demonstrate my database skills)
