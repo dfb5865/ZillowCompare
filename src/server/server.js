@@ -8,7 +8,8 @@ app.get('/home/:address/:citystatezip', function (req, res) {
 
     var streetAddress = req.params.address;
     var cityStateZip = req.params.citystatezip;
-
+    
+    //Call the module that contains the logic to query zillow and create a response
     zillowProcessor.getResult(streetAddress, cityStateZip, function (result) {
         console.log(result);
         res.send(result);

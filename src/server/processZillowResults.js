@@ -1,26 +1,36 @@
 var request = require('request');
 var parseString = require('xml2js').parseString;
 
+//Expose this function to consumers of the module
 exports.getResult = function(streetAddress, cityStateZip, callback){
   
+  //Create Zillow rest API url for the given address
   var searchResultsUrlBase = 'http://zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz1b4ka4wuhor_61q4u';
   var searchResultsUrl = searchResultsUrlBase + '&address=' + streetAddress + '&citystatezip=' + cityStateZip;
   
+  //Use request to get the XML results of the zillow API call
   request(searchResultsUrl, function (searchResultsError, searchResultsResponse, searchResultsBody){
+    //Check if we got a good http response
 		if (!searchResultsError && searchResultsResponse.statusCode == 200){
+      //Parse the xml from zillow into json
       parseString(searchResultsBody, function (err, jsonSearchResults){
+        //grab the data we are looking for
         getSimpleSearchResult(jsonSearchResults, function(result){
+          //If we actually found a match from zillow, make the 'GetUpdatedPropertyDetails' zillow API call to get images and price
           if(result.code === 0){
+            //Add the images and price and call back to send the result
             addPriceAndImages(result, function(detailedResult){
               callback(detailedResult);
             });
           }
+          //Couldn't find an address, call back with a failed result
           else{
             callback(result);
           }
         });
       });
-    }			
+    }
+    //If we got a bad http response, send a failed result
     else{
       createFailedResult(function(failedResult){
         callback(failedResult);
