@@ -27,3 +27,4 @@ This project is to demonstrate my skills as a full stack software developer.
 * Ensure that the home details are always displayed next to each other (different image sizes cause issues)
 * Handle xml2js parsing errors on the server
 * Clean up some of the frontend code
+* Add tests to client and server
