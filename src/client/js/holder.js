@@ -1,3 +1,6 @@
+//Got this from stackoverflow.
+//Makes the 'holder' attribute work like html5 placeholder
+//Kinda buggy
 $(function()
 {
   $('input').each(function() 

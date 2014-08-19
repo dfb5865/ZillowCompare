@@ -1,10 +1,14 @@
-<!-- <script src="js/carouselScript.js"></script> -->
+<!-- <script src="js/carouselScript.js"></script> //Adding this script makes the image carousel work
+                                                  // But it's kinda buggy so I'm exculding it for now -->
 <div id="mainContainer" class="container">
     <div class="row">
 
+        <!-- Left home column -->
         <div class="col-md-6">
+            <!-- Display the address -->
             <h2 class="text-center">{{leftHome.address.street}}, {{leftHome.address.city}} {{leftHome.address.state}}</h2>
 
+            <!-- Image carousel (left and right controls don't work for now) -->
             <div id="leftCarousel" class="carousel slide center-block">
 
                 <!-- Wrapper for slides -->
@@ -27,6 +31,10 @@
             </div>
 
             <br />
+
+            <!-- This list group controls the table of information for the left house
+                 TODO:  The logic for coloring the rows is in the ng-class directive, I don't like this.
+                        I'd like move it into it's own directive.-->
             <ul class="list-group">
                 <li class="list-group-item" ng-class="{'list-group-item-success': leftHome.sqft * 1 > rightHome.sqft * 1, 'list-group-item-danger': leftHome.sqft * 1 < rightHome.sqft * 1, 'list-group-item-info': leftHome.sqft * 1 == rightHome.sqft * 1}">
                     <span class="pull-right">{{leftHome.sqft}}</span>
@@ -53,10 +61,13 @@
             </ul>
         </div>
 
+        <!-- Right home column -->
         <div class="col-md-6">
+            <!-- Display the address -->
             <h2 class="text-center">{{rightHome.address.street}}, {{rightHome.address.city}} {{rightHome.address.state}}</h2>
 
-            <div id="leftCarousel" class="carousel slide center-block">
+            <!-- Image carousel (left and right controls don't work for now) -->
+            <div id="rightarousel" class="carousel slide center-block">
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
@@ -77,6 +88,10 @@
                 </span>
             </div>
             <br />
+
+            <!-- This list group controls the table of information for the left house
+                 TODO:  The logic for coloring the rows is in the ng-class directive, I don't like this.
+                        I'd like move it into it's own directive.-->
             <ul class="list-group">
                 <li class="list-group-item" ng-class="{'list-group-item list-group-item-success': leftHome.sqft * 1 < rightHome.sqft * 1, 'list-group-item list-group-item-danger': leftHome.sqft * 1 > rightHome.sqft * 1, 'list-group-item list-group-item-info': leftHome.sqft * 1 == rightHome.sqft * 1}">
                     <span class="pull-right">{{rightHome.sqft}}</span>
@@ -107,7 +122,8 @@
 
     <br />
     <br />
-    
+
+    <!-- This is basically a copy/paste of the search form, but binding the values instead of using placeholders-->
     <form>
         <div class="row">
             <div class="col-md-6">
@@ -160,6 +176,7 @@
 
         <br />
 
+        <!-- Submit button -->
         <div class="row">
             <div class="center-block">
                 <button id="searchButton" class="btn btn-primary btn-lg center-block" type="submit" ng-click="getSearchResults()">Compare!</button>

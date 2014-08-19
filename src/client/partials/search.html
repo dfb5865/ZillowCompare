@@ -1,69 +1,79 @@
+<!-- Script for html5-like placeholder -->
 <script src="js/holder.js"></script>
 <div class="container">
-		<div class="jumbotron">
-			<h1 class="text-center">Compare Homes!</h1>
-			<p class="text-center">Put in the address of two homes you are interested in and we will compare them for you.<br />
-			Compare price, bedrooms, bathrooms, square feet... everything to help you make a better decision on your dream home.</p>
-			<div class="text-center"><p><a href="#/about" class="btn btn-success btn-lg" role="button">Learn more &raquo;</a></p></div>
-      <br />
-      <form>
-        <div class="row">    
-        
-          <div class="col-md-6">
-            <div class="col-md-6 nopadding">
-              <div id="leftStreetDiv">	
-                <strong>Left Home</strong>
-                <input id="leftStreet" type="text" class="form-control input-lg" holder="4 Mystique"/>
-              </div>
-            </div>
-    
-            <div class="col-md-4 nopadding">
-              <div id="leftCityDiv">
-                <br />
-                <input id="leftCity" type="text" class="form-control input-lg" holder="Newport Coast"/>
-              </div>
-            </div>
-    
-            <div class="col-md-2 nopadding">
-              <div id="leftStateDiv">
-                <br />
-                <input id="leftState" type="text" class="form-control input-lg" holder="CA"/>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-6">
-            
-            <div class="col-md-6 nopadding">
-              <div id="rightStreetDiv">
-                <strong>Right Home</strong>
-                <input id="rightStreet" type="text" class="form-control input-lg" holder="1209 Ocean Ter"/>
-              </div>
-            </div>
-            
-            <div class="col-md-4 nopadding">
-              <div id="rightCityDiv">
-                <br />
-                <input id="rightCity" type="text" class="form-control input-lg" holder="Seaside Heights"/>
-              </div>
-            </div>
-            
-            <div class="col-md-2 nopadding">
-              <div id="rightStateDiv">
-                <br />
-                <input id="rightState" type="text" class="form-control input-lg" holder="NJ"/>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Jumbotron contains the description about the site, and the search form -->
+    <div class="jumbotron">
+
+        <!-- Description about the site and link to 'about' page -->
+        <h1 class="text-center">Compare Homes!</h1>
+        <p class="text-center">
+            Put in the address of two homes you are interested in and we will compare them for you.<br />
+            Compare price, bedrooms, bathrooms, square feet... everything to help you make a better decision on your dream home.
+        </p>
+        <div class="text-center"><p><a href="#/about" class="btn btn-success btn-lg" role="button">Learn more &raquo;</a></p></div>
         
         <br />
-        
-        <div class="row">
-          <div class="center-block">
-             <button id="searchButton" class="btn btn-primary btn-lg center-block" type="submit" ng-click="getSearchResults()">Compare!</button>
-          </div>
-        </div>
-      </form>
+
+        <!-- Search form with placeholders for the house from real housewives of OC and jersey shore shack -->
+        <form>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="col-md-6 nopadding">
+                        <div id="leftStreetDiv">
+                            <strong>Left Home</strong>
+                            <input id="leftStreet" type="text" class="form-control input-lg" holder="4 Mystique" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 nopadding">
+                        <div id="leftCityDiv">
+                            <br />
+                            <input id="leftCity" type="text" class="form-control input-lg" holder="Newport Coast" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 nopadding">
+                        <div id="leftStateDiv">
+                            <br />
+                            <input id="leftState" type="text" class="form-control input-lg" holder="CA" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="col-md-6 nopadding">
+                        <div id="rightStreetDiv">
+                            <strong>Right Home</strong>
+                            <input id="rightStreet" type="text" class="form-control input-lg" holder="1209 Ocean Ter" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 nopadding">
+                        <div id="rightCityDiv">
+                            <br />
+                            <input id="rightCity" type="text" class="form-control input-lg" holder="Seaside Heights" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 nopadding">
+                        <div id="rightStateDiv">
+                            <br />
+                            <input id="rightState" type="text" class="form-control input-lg" holder="NJ" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <!-- Submit button -->
+            <div class="row">
+                <div class="center-block">
+                    <button id="searchButton" class="btn btn-primary btn-lg center-block" type="submit" ng-click="getSearchResults()">Compare!</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

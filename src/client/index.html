@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html ng-app="ZillowCompareApp" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../img/favicon.ico">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../img/favicon.ico">
 
-    <title>Zillow Compare</title>
+        <title>Zillow Compare</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Dependencies -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
 
-    <!-- Styles for nav bar padding -->
-    <link href="../css/styles.css" rel="stylesheet">
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-        
-  </head>
+        <!-- Bootstrap core CSS -->
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-          </button>
-          <a class="navbar-brand" href="/">Zillow Compare</a>
+        <!-- Custom styles ontop of bootstrap -->
+        <link href="../css/styles.css" rel="stylesheet">
+
+        <!-- AngularJS code -->
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+
+    </head>
+
+    <body>
+        <!-- Nav Bar -->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                    </button>
+                    <a class="navbar-brand" href="/">Zillow Compare</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  
-  <div ng-view></div>
-  
-	<div class="container">
-    <hr>
-    <footer>
-      <p>&copy; Dave Banan 2014</p>
-    </footer>
-	</div>
-  
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-  </body>
+
+        <!-- Angular partial html pages -->
+        <div ng-view></div>
+
+        <!-- Copyright -->
+        <div class="container">
+            <hr>
+            <footer>
+                <p>&copy; Dave Banan 2014</p>
+            </footer>
+        </div>
+
+    </body>
 </html>
